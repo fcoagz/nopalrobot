@@ -61,7 +61,7 @@ def resVideo(message):
 
             with os.scandir() as fileVideo:
                 fileVideo = [file for file in fileVideo if file.is_file()]
-            with open(fileVideo[0], 'rb') as video:
+            with open(fileVideo[1], 'rb') as video:
                 bot.send_chat_action(message.chat.id, 'upload_video')
                 bot.edit_message_text(text='''🌵 Enviando el vídeo...''',
                                  chat_id= message.chat.id,
