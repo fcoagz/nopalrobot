@@ -8,7 +8,7 @@ NopalRobot es una herramienta muy útil para aquellos que desean reproducir vide
 - Clonar este repositorio `git clone https://github.com/fcoagz/nopalrobot`
 - Descarga la biblioteca de software libre FFmpeg
 - Descarga las dependencias `pip install -r requirements.txt`
-- Ejecute en el terminal `bash main.sh`
+- Ejecute en el terminal `python3 src/bot.py`
 - 🌵 ¡disfrute!
 
 # Uso
