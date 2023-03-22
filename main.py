@@ -1,6 +1,6 @@
 import telebot
 from telebot.types import ReplyKeyboardMarkup, BotCommand
-from keep_alive import keep_alive
+from src import keep_alive
 import subprocess
 import json
 import os
@@ -85,5 +85,5 @@ if __name__ == '__main__':
         command='start',
         description='Iniciar con el bot'
     )])
-    keep_alive()
+    keep_alive.keep_alive()
     bot.infinity_polling()
