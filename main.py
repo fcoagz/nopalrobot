@@ -45,8 +45,8 @@ def resVideo(message):
         msg = bot.send_message(message.chat.id, '''Este proceso puede tomar un tiempo, dependiendo de la duración y la calidad del video original.''')
 
         os.chdir(filePath)
-        convert = subprocess.run(ffmpeg_command.format(resolution), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        if convert.returncode == 0:
+        os.system(ffmpeg_command.format(resolution)) 
+        try:
             bot.edit_message_text(text='''¡Excelente! El archivo de video que has solicitado se ha convertido con éxito.''',
                                   chat_id=message.chat.id,
                                   message_id=msg.message_id)
@@ -72,7 +72,7 @@ def resVideo(message):
                                  message_id= msg.message_id)
                 os.remove('nopalOUTPUT.avi')
                 
-        else:
+        except:
             bot.edit_message_text(text='''Se produjo un error al convertir el archivo de video.''',
                              chat_id= message.chat.id,
                              message_id= msg.message_id)
